@@ -1,0 +1,29 @@
+.search {
+   padding: 1rem;
+}
+
+.candidates-wrapper {
+   overflow: hidden;
+   border-radius: 1rem;
+   border: solid 0.1rem #dbdbdb;
+}
+
+.candidates {
+   table-layout: fixed;
+   width: 100%;
+
+}
+
+.candidates th {
+   text-align: left;
+   padding: 1.5rem 1rem;
+   font-weight: 600; 
+}
+
+.candidates td {
+   padding: 1rem;
+}
+
+.candidates tbody tr:nth-child(odd) {
+   background: #dbdbdb;
+}
