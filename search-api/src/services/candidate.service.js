@@ -112,7 +112,7 @@ export const listCandidates = (search, status, page, pageSize) => {
 
    const list = candidates
       .filter((value) => (
-         (!search || value.email.toLowerCase().includes(search.toLowerCase()) || value.name.toLowerCase().includes(search.toLowerCase()))
+         (!search || (value.email.toLowerCase().includes(search.toLowerCase()) || value.name.toLowerCase().includes(search.toLowerCase())))
          && (!status || value.status === status)));
 
    return  {

@@ -35,8 +35,8 @@ export function CandidateSearch() {
                   </tr>
                </thead>
                <tbody>
-                  {candidates.map((item, index) => (
-                     <tr key={index}>
+                  {candidates.map((item) => (
+                     <tr key={item.id}>
                         <td>{item.name}</td>
                         <td>{item.email}</td>
                         <td>{item.status}</td>
