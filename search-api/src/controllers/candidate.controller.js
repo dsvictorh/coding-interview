@@ -12,16 +12,32 @@ import * as candidateService from '../services/candidate.service';
  */
 export const listCandidates = async (req, res, next) => {
   try {
-    const { q, status, page, pageSize } = req.query;
-    const currentPage = parseInt(page ?? 1);
-    const currentPageSize = parseInt(pageSize ?? 10);
+    let { q, status, page, pageSize } = req.query;
+    page = parseInt(page ?? 1);
+    pageSize = parseInt(pageSize ?? 10);
 
-    const response = candidateService.listCandidates(q, status, currentPage, currentPageSize);
+    if (page < 1) {
+      page = 1;
+    } else if (page > 50) {
+      page = 50
+    }
+
+    if (pageSize < 5) {
+      pageSize = 5;
+    } else if (pageSize > 50) {
+      pageSize = 50
+    }
+
+    if (!['', 'new', 'contacted', 'interviewing', 'hired'].includes(status)) {
+      status = '';
+    }
+
+    const response = candidateService.listCandidates(q, status, page, pageSize);
 
     res.status(HttpStatus.OK).json({
       data: response.list,
-      page: currentPage,
-      pageSize: currentPageSize,
+      page: page,
+      pageSize: pageSize,
       total: response.total
     });
   } catch (error) {

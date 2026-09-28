@@ -15,7 +15,7 @@ export type CandidateResponse = {
   total: number;
 };
 
-export const listCandidates = async (search: string, status: CandidateStatus, page: number, pageSize: number): Promise<CandidateResponse> => {
+export const listCandidates = async (search: string, status: CandidateStatus | '', page: number, pageSize: number): Promise<CandidateResponse> => {
    const response = await fetch(`http://localhost:3000/api/v1/candidates?q=${search}&status=${status}&page=${page}&pageSize=${pageSize}`, {
       method: 'GET',
       headers: {

@@ -6,12 +6,12 @@
    overflow: hidden;
    border-radius: 1rem;
    border: solid 0.1rem #dbdbdb;
+   margin-bottom: 1rem;
 }
 
 .candidates {
    table-layout: fixed;
    width: 100%;
-
 }
 
 .candidates th {
@@ -26,4 +26,59 @@
 
 .candidates tbody tr:nth-child(odd) {
    background: #dbdbdb;
+}
+
+.filter {
+   display: flex;
+   align-items: center;
+   margin-bottom: 1rem;
+   gap: 0.5rem;
+}
+
+.filter input {
+   flex-grow: 1;
+   padding: 0.5rem;
+   border: solid 0.1rem #dbdbdb;
+   border-radius: 0.7rem;
+}
+
+.filter select {
+   flex-shrink: 0;
+   padding: 0.4rem 0.5rem;
+   border: solid 0.1rem #dbdbdb;
+   border-radius: 0.7rem;
+   cursor: pointer;
+}
+
+.pages {
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.pages ul {
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
+}
+
+.pages button {
+   border: solid 0.1rem #dbdbdb;
+   border-radius: 0.5rem;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+   transition: background-color 0.15s linear;
+}
+
+.pages button:hover, .pages button.active {
+   background: none;
+}
+
+.pages select {
+   padding: 0.4rem 0.5rem;
+   border: solid 0.1rem #dbdbdb;
+   border-radius: 0.7rem;
+   cursor: pointer;
 }

@@ -24,7 +24,7 @@ const candidates = [
       id: "4",
       name: "Daniel Brooks",
       email: "daniel@example.com",
-      status: "rejected",
+      status: "contacted",
       updatedAt: "2026-08-23T14:30:00.000Z"
    },
    {
@@ -66,7 +66,7 @@ const candidates = [
       id: "10",
       name: "Ethan Thompson",
       email: "ethan@example.com",
-      status: "rejected",
+      status: "contacted",
       updatedAt: "2026-08-29T15:05:00.000Z"
    },
    {
